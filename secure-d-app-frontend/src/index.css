@@ -1,0 +1,140 @@
+/* Path :-  secure-d-app-frontend\src\index.css */
+
+@import "tailwindcss";
+
+
+:root {
+  /* Default to dark navy theme like production site */
+  --background: #0b1f3a; /* deep navy */
+  --foreground: #e6f1ff; /* soft near-white */
+  --tertiary: #12d576; /* brand green */
+  --card-border-light: #A4CDFF;
+  --card-border-dark: #0b1f3a; /* subtle dark border */
+  --card-bg-light: rgba(255,255,255,0.04);
+  --card-bg-dark: rgba(255,255,255,0.06);
+}
+
+/* Light mode variables */
+.light {
+  --background: #ffffff; /* pure white */
+  --foreground: #1a1a1a; /* dark text */
+  --tertiary: #12d576; /* keep brand green */
+  --card-border-light: #e5e7eb; /* light gray border */
+  --card-border-dark: #d1d5db; /* slightly darker gray */
+  --card-bg-light: rgba(0,0,0,0.05);
+  --card-bg-dark: rgba(0,0,0,0.08);
+}
+
+body {
+  color: var(--foreground);
+  /* Plain navy by default; grid applied per-section via .bg-grid-navy */
+  background: var(--background);
+  font-family: "Nunito Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Layout wrappers (match reference naming) */
+.service-container { min-height: 100vh; }
+.service { color: var(--foreground); }
+
+/* Hero label helpers */
+.white-text { color: #ffffff; }
+.light .white-text { color: #1a1a1a; } /* Dark text in light mode */
+.green-x { color: var(--tertiary); }
+
+/* Grid background utilities (match production site) */
+.bg-grid-navy {
+  background-color: #0b1f3a; /* deep navy */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.light .bg-grid-navy {
+  background-color: #f8fafc; /* very light gray */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.bg-grid-light {
+  background-color: #f6f8fb; /* very light gray-blue */
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.06) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+}
+
+/* Token utilities used in components */
+.text-secondary { color: var(--foreground) !important; }
+.text-primary { color: var(--foreground) !important; }
+.dark .text-primary { color: var(--foreground) !important; }
+.light .text-primary { color: var(--foreground) !important; }
+.light .text-secondary { color: var(--foreground) !important; }
+.bg-tertiary { background-color: var(--tertiary) !important; }
+
+/* Border utilities for both themes */
+.border-cardBorderColorLight { border-color: var(--card-border-light) !important; }
+.border-cardBorderColorDark { border-color: var(--card-border-dark) !important; }
+.dark .border-cardBorderColorDark { border-color: var(--card-border-dark) !important; }
+.light .border-cardBorderColorLight { border-color: var(--card-border-light) !important; }
+.light .border-cardBorderColorDark { border-color: var(--card-border-dark) !important; }
+
+/* Background utilities for both themes */
+.bg-cardBackgroundLight { background-color: var(--card-bg-light) !important; }
+.bg-cardBackgroundDark { background-color: var(--card-bg-dark) !important; }
+.dark .bg-cardBackgroundDark { background-color: var(--card-bg-dark) !important; }
+.light .bg-cardBackgroundLight { background-color: var(--card-bg-light) !important; }
+.light .bg-cardBackgroundDark { background-color: var(--card-bg-dark) !important; }
+
+/* Light mode specific overrides for better visibility */
+.light * {
+  color: var(--foreground);
+}
+
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+  color: var(--foreground) !important;
+}
+
+.light p, .light span, .light div {
+  color: var(--foreground);
+}
+
+/* Ensure navbar pill has proper contrast in light mode */
+.light .rounded-full.border.border-white\/15.bg-white\/5 {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Ensure testimonial quote marks are visible in light mode */
+.light .text-\[\#A4CDFF\] {
+  color: #2563eb !important; /* Blue for light mode */
+}
+
+.light .text-\[\#A4CDFF\]\/80 {
+  color: rgba(37, 99, 235, 0.8) !important; /* Blue with opacity for light mode */
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Hide scrollbars (used by testimonials track) */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
