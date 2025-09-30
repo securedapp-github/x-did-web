@@ -10,7 +10,7 @@ export default function ProductServiceHero({ name, title, tagline, image, cta, o
     <section className="w-full text-secondary dark:text-primary">
       {/* Grid only on hero area */}
       <div className="bg-grid-navy">
-        <div className="container mx-auto px-4 lg:px-24 pt-16 lg:pt-24">
+        <div className="container mx-auto px-4 lg:px-24 pt-10 lg:pt-16">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left: stacked content */}
             <div className="space-y-4 md:space-y-6">

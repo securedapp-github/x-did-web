@@ -2,7 +2,7 @@
 
 // Placeholder reviews; replace when real testimonials are available
 export const reviews = [
-  { text: "SecureX-ID streamlined our onboarding while keeping us compliant.", author: "CTO, DeFi Protocol" },
+  { text: "SecureX-DID streamlined our onboarding while keeping us compliant.", author: "CTO, DeFi Protocol" },
   { text: "KYC that actually works for Web3.", author: "Founder, NFT Marketplace" },
 ];
 

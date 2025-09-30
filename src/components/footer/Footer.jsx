@@ -152,9 +152,23 @@ export default function Footer() {
         {/* Legal Footer */}
         <div className="opacity-70 flex flex-col space-y-4 sm:space-y-2 lg:flex-row lg:justify-between items-center text-center lg:text-left">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm">
-            <a target="_blank" rel="noreferrer" href="https://securedapp.gitbook.io/securedapp-launchpad/privacy-policy-securedapp" className="hover:underline hover:text-[#12d576] transition-colors">Privacy Policy</a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://securedapp.gitbook.io/securedapp-launchpad/privacy-policy-securedapp"
+              className="hover:underline hover:text-[#12d576] transition-colors"
+            >
+              SecureX-DID Privacy Policy
+            </a>
             <i className="fa-solid fa-circle text-[8px] hidden sm:block" />
-            <a target="_blank" rel="noreferrer" href="https://securedapp.gitbook.io/securedapp-launchpad/disclaimer-and-risk-securedapp" className="hover:underline hover:text-[#12d576] transition-colors">Terms & Conditions</a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://securedapp.gitbook.io/securedapp-launchpad/disclaimer-and-risk-securedapp"
+              className="hover:underline hover:text-[#12d576] transition-colors"
+            >
+              SecureX-DID Terms of Service
+            </a>
           </div>
           <div className="text-sm">© {new Date().getFullYear()}, Vettedcode Technologies India Pvt. Ltd.. All rights reserved</div>
         </div>

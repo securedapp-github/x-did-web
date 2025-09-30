@@ -20,7 +20,7 @@ function Web3KYC({ darkMode, toggleTheme }) {
   }
 
   return (
-    <div className="service-container">
+    <div id="top" className="service-container">
       <MetaTags
         data={{
           title: "Blockchain Identity Verification for Secure KYC & Compliance",
@@ -40,7 +40,7 @@ function Web3KYC({ darkMode, toggleTheme }) {
             <>
               <span className="white-text">Secure</span>
               <span className="green-x">X</span>
-              <span className="white-text">-ID: Decentralized KYC/AML for Web3</span>
+              <span className="white-text">-DID: Decentralized KYC/AML for Web3</span>
             </>
           }
           title="Your Gateway to Compliant and Secure Decentralized Finance"
@@ -53,7 +53,7 @@ function Web3KYC({ darkMode, toggleTheme }) {
         <section id="benefits" className="py-12 sm:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <ProductCard
-              header={"What is SecureX-ID ?"}
+              header={"What is SecureX-DID?"}
               description={
                 "SecureX-DID is a next-generation Decentralized Identity solution powered by Zero Knowledge Proof technology. It gives people and businesses full ownership of their digital identity, removing the risks of centralized logins, data leaks, and password fatigue. With SecureX-DID, you can verify “who you are” without oversharing personal details. This means safer logins, stronger digital privacy, and a foundation for a new era of Web3 security."
               }
@@ -123,7 +123,7 @@ function Web3KYC({ darkMode, toggleTheme }) {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionTitle
               name={"Benefits"}
-              title="Benefits of SecureX-ID"
+              title="Benefits of SecureX-DID"
               description={
                 "SecureX-DID transforms the way you interact online, putting you in complete control. Our Self-Sovereign Identity model is designed for a digital world where data protection is paramount. It shifts power from centralized institutions back to the individual, creating a more secure, efficient, and private online experience."
               }
