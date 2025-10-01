@@ -19,18 +19,16 @@ export default function NavbarLargeScreen({ handleNavigation, nextPath, darkMode
           <nav>
             <div className="rounded-full border border-white/15 bg-white/5 backdrop-blur px-4 py-2">
               <ul className="flex items-center gap-3 text-[0.95rem] leading-none">
-                {navItems.map((group) => {
-                  return (
-                    <li key={group.label}>
-                      <a
-                        href="#"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full hover:bg-white/10 transition-colors"
-                      >
-                        <span className="opacity-90">{group.label}</span>
-                      </a>
-                    </li>
-                  );
-                })}
+                {navItems.map((group) => (
+                  <li key={group.label}>
+                    <a
+                      href={group.to || "#"}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full hover:bg-white/10 transition-colors"
+                    >
+                      <span className="opacity-90">{group.label}</span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </nav>
@@ -49,7 +47,9 @@ export default function NavbarLargeScreen({ handleNavigation, nextPath, darkMode
           </button>
           {/* Login outlined button */}
           <a
-            href="#login"
+            href="https://client.securexdid.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium border border-[#12d576] text-[#12d576] hover:bg-[#12d576]/10 transition-colors min-w-[80px] h-10"
           >
             Login
