@@ -59,9 +59,10 @@ export default function AccountDeleteRequest({ darkMode }) {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.com"
-          className="w-full p-3 rounded-xl border border-gray-300 dark:border-gray-700 mb-4 text-black focus:outline-none focus:ring-2 focus:ring-red-500"
-        />
+          placeholder="user@example.com"
+          className="w-full p-3 rounded-xl border border-gray-300 dark:border-gray-700 mb-4 
+          text-white placeholder-white 
+          focus:outline-none focus:ring-2 focus:ring-red-500 bg-transparent"        />
         <button
           type="submit"
           className="w-full p-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-base sm:text-lg transition-colors disabled:opacity-50"
@@ -82,6 +83,17 @@ export default function AccountDeleteRequest({ darkMode }) {
           ❌ Something went wrong. Please try again later.
         </p>
       )}
+       <p className="mb-6 max-w-lg text-center text-base sm:text-lg">
+        A confirmation email will be shared with the user before final deletion.     <a
+  href="https://docs.google.com/document/d/10Ls61RNto3RhaJr_ovHkJ-DQUNA0_ukA1V1A2Zr87Nw/edit?tab=t.0"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-red-500 hover:underline"
+>
+  Privacy Policy
+</a>
+      </p>
+     
     </div>
   )
 }
