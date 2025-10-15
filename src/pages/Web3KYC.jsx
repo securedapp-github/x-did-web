@@ -44,7 +44,7 @@ function Web3KYC({ darkMode, toggleTheme }) {
                 </span>
               </>
             }
-            title="Your Gateway to Compliant and Secure Decentralized Finance"
+            title="Your Gateway to Compliant and Secure Decentralized World"
             tagline="Your Identity, Your Proof, Your Control."
             image={"/assets/images/ServicePages/s5-hero.webp"}
             service={true}
