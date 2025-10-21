@@ -106,9 +106,9 @@ export default function Testimonials({ reviews = [] }) {
               </div>
 
               {/* Testimonial Content */}
-              <div className="flex-1 flex flex-col justify-center pt-8 sm:pt-10">
+              <div className="flex-1 flex flex-col justify-start pt-8 sm:pt-10">
                 <p className={[
-                  "text-sm sm:text-base lg:text-lg leading-relaxed text-center",
+                  "text-sm sm:text-base lg:text-lg leading-relaxed text-left whitespace-pre-line",
                   "font-light tracking-wide",
                   i === active ? "text-white" : "text-white/90 dark:text-white/90 light:text-gray-700"
                 ].join(" ")}>

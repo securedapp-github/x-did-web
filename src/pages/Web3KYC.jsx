@@ -11,8 +11,7 @@ import { FeatureCards } from "../components/productService/FeatureCard";
 import Testimonials from "../components/common/Testimonials";
 import FAQs from "../components/common/FAQs";
 
-import { services, benefits, faqsData } from "../data/web3kyc";
-import { reviews } from "../pageComponents/home/home.data";
+import { services, benefits, faqsData, reviews } from "../data/web3kyc";
 
 function Web3KYC({ darkMode, toggleTheme }) {
   if (typeof window !== "undefined") {

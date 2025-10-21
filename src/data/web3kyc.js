@@ -2,8 +2,19 @@
 
 // Placeholder reviews; replace when real testimonials are available
 export const reviews = [
-  { text: "SecureX-DID streamlined our onboarding while keeping us compliant.", author: "CTO, DeFi Protocol" },
-  { text: "KYC that actually works for Web3.", author: "Founder, NFT Marketplace" },
+  {
+    testimonial:
+      "Based on the demo and the document shared earlier: Overall, the product is quite state-of-the-art and addresses a very critical problem in the domain of secure decentralized identity verification. The tech stack involving the usage of Zero Knowledge Proofs (ZKPs) and Merkle trees for DID verification makes your solution technically sound and advanced. In addition to the above, use of decentralized infrastructure through blockchains makes your app resilient to all forms of system failures and cyber attacks. You may consider filing a patent regarding your technology stack as these technologies have predominantly not been used yet for identity verification.\n\nThe workflow of your product also sounds technically acceptable as you have considered the DPDP regulations to protect the privacy of users while enabling secure authentication for them. The product seems to be quite ready for commercial use. It feels like this product will be used as an add-on or a plug-in to several main applications such as Hotel booking apps (MakeMyTrip), insurance, or loan application processing, etc. which requires identity verification to avail the services.\n\nSuggestions for improvement: The USP of your product is that you do not collect sensitive user information (such as aadhar, pan information) for the verification process. Hence, in the event of data breach, customer data will not be affected. Therefore, you need to clearly showcase the same in the UI/UX of your product through an animated video/image, thereby making your product more appealing to general users.",
+    name: "Dr. Siba Narayan Swain",
+    designation: "Assistant Professor, IIT Dharwad",
+  },
+  {
+    testimonial:
+      "Thanks so much for the demo and the supporting document—it was great to get a clear picture of what SecureX-DID is aiming to solve. The product directly addresses the big challenge of digital identity verification, and it’s quite impressive how you’ve used advanced tools like Zero Knowledge Proofs and Merkle trees for privacy and security.\n\nIt looks ready for real-world use across sectors like travel, banking and even government administrative data where secure identity is key. One idea that could help you scale even bigger: consider building strategic partnerships with large government and industry bodies to drive early adoption. Bulk integration at this level could accelerate SecureX-DID’s national reach.\n\nOverall, SecureX-DID feels like a product with genuinely big potential that could shape how digital trust and identity are managed nationwide.",
+    name: "Rajendra Hegadi, Ph.D.",
+    designation:
+      "Associate Professor, Dept of Data Science and Artificial Intelligence (DSAI) Professor Incharge (Academic), Indian Institute of Information Technology (Triple-IT) Dharwad",
+  },
 ];
 
 // Benefits (from provided data)
