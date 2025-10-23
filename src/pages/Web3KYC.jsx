@@ -1,5 +1,6 @@
 /* Path: secure-d-app-frontend/src/pages/Web3KYC.jsx */
 
+import { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import MetaTags from "../components/common/MetaTags";
@@ -10,6 +11,7 @@ import HowItWorksCard from "../components/productService/HowItWorksCard";
 import { FeatureCards } from "../components/productService/FeatureCard";
 import Testimonials from "../components/common/Testimonials";
 import FAQs from "../components/common/FAQs";
+import ContactFormModal from "../components/common/ContactFormModal";
 
 import { services, benefits, faqsData, reviews } from "../data/web3kyc";
 
@@ -17,6 +19,10 @@ function Web3KYC({ darkMode, toggleTheme }) {
   if (typeof window !== "undefined") {
     window.scrollTo(0, 0);
   }
+
+  const [contactOpen, setContactOpen] = useState(false);
+  const openContact = () => setContactOpen(true);
+  const closeContact = () => setContactOpen(false);
 
   return (
     <div id="top" className="service-container">
@@ -47,6 +53,7 @@ function Web3KYC({ darkMode, toggleTheme }) {
             tagline="Your Identity, Your Proof, Your Control."
             image={"/assets/images/ServicePages/s5-hero.webp"}
             service={true}
+            onClick={openContact}
           />
         </main>
       </div>
@@ -57,8 +64,9 @@ function Web3KYC({ darkMode, toggleTheme }) {
             description={
               "SecureX-DID is a next-generation Decentralized Identity solution powered by Zero Knowledge Proof technology. It gives people and businesses full ownership of their digital identity, removing the risks of centralized logins, data leaks, and password fatigue. With SecureX-DID, you can verify “who you are” without oversharing personal details. This means safer logins, stronger digital privacy, and a foundation for a new era of Web3 security."
             }
-            buttonText={"Scan now"}
+            buttonText={"Request Quote"}
             image={"/assets/images/ServicePages/s5-1.webp"}
+            onButtonClick={openContact}
           />
         </div>
       </section>
@@ -235,6 +243,15 @@ function Web3KYC({ darkMode, toggleTheme }) {
           </div>
         </div>
       </section>
+
+      <ContactFormModal
+        open={contactOpen}
+        onClose={closeContact}
+        services={services}
+        onSubmit={() => {
+          closeContact();
+        }}
+      />
 
       <Footer />
     </div>
