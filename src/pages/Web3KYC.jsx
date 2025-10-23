@@ -187,63 +187,6 @@ function Web3KYC({ darkMode, toggleTheme }) {
         </div>
       </section>
 
-      {/* Key Topics Covered (from document table) */}
-      <section className="py-12 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle name="Appendix" title="Key Topics Covered" />
-          <div className="mt-6 sm:mt-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-cardBgLight dark:bg-cardBgDark p-4 sm:p-6 lg:p-8">
-            <div className="overflow-x-auto">
-              <table className="min-w-[720px] w-full table-auto text-left text-sm">
-                <thead>
-                  <tr className="text-white/80 dark:text-white/80 light:text-gray-700">
-                    <th className="py-3 px-4 font-semibold">Keyword</th>
-                    <th className="py-3 px-4 font-semibold">Location</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200/30 dark:divide-white/10">
-                  {[
-                    {
-                      k: "Decentralized Identity",
-                      l: "Product Description, Benefits Intro, FAQs, Deep Dive (User & Enterprise)",
-                    },
-                    {
-                      k: "Zero Knowledge Proof",
-                      l: "Product Description, Benefits, FAQs, Strategic Rationale",
-                    },
-                    { k: "Self-Sovereign Identity", l: "Benefits Intro, FAQs" },
-                    { k: "Web3 Security", l: "Product Description, FAQs" },
-                    { k: "Digital Privacy", l: "Product Description, FAQs" },
-                    {
-                      k: "Blockchain Authentication",
-                      l: "Benefits, FAQs, Deep Dive (Developer)",
-                    },
-                    {
-                      k: "Identity Verification",
-                      l: "Benefits, FAQs, Deep Dive (Enterprise)",
-                    },
-                    { k: "Data Protection", l: "Benefits, FAQs" },
-                    {
-                      k: "Secure Login",
-                      l: "Product Description, FAQs, Deep Dive (User)",
-                    },
-                    { k: "User Anonymity", l: "Benefits, Deep Dive (User)" },
-                  ].map((row) => (
-                    <tr key={row.k} className="hover:bg-white/5">
-                      <td className="py-3 px-4 align-top text-white/90 dark:text-white/90 light:text-gray-800">
-                        {row.k}
-                      </td>
-                      <td className="py-3 px-4 align-top text-white/70 dark:text-white/70 light:text-gray-700">
-                        {row.l}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <ContactFormModal
         open={contactOpen}
         onClose={closeContact}
