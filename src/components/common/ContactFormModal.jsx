@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ContactFormModal({ open, onClose, services = [], onSubmit }) {
+export default function ContactFormModal({ open, onClose, services = [], onSubmit, darkMode = false }) {
   const [fullName, setFullName] = useState("");
   const [mobile, setMobile] = useState("");
   const [companyName, setCompanyName] = useState("");
@@ -14,6 +14,24 @@ export default function ContactFormModal({ open, onClose, services = [], onSubmi
   const [companyError, setCompanyError] = useState("");
   const [messageError, setMessageError] = useState("");
   const [privacyError, setPrivacyError] = useState("");
+
+  const isDark = Boolean(darkMode);
+  const panelClass = [
+    "relative w-full max-w-3xl rounded-2xl border p-5 sm:p-8 shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar",
+    isDark ? "border-white/10 bg-[#0B1B2B] text-white" : "border-black/10 bg-white text-gray-900",
+  ].join(" ");
+  const closeButtonClass = isDark
+    ? "text-white/80 hover:text-white text-xl"
+    : "text-gray-500 hover:text-gray-900 text-xl";
+  const baseInputClass = "w-full rounded-xl px-4 py-3 focus:outline-none border";
+  const baseTextareaClass = "w-full rounded-xl px-4 py-3 focus:outline-none border";
+  const normalBorderClass = isDark ? "border-white/20" : "border-gray-300";
+  const normalFocusClass = "focus:ring-[#12d576]";
+  const fieldToneClass = isDark
+    ? "bg-transparent text-white placeholder:text-white/60"
+    : "bg-gray-50 text-gray-900 placeholder:text-gray-500";
+  const checkboxTextClass = isDark ? "text-white/80" : "text-gray-700";
+  const privacyLinkClass = isDark ? "underline text-[#A4CDFF]" : "underline text-[#2563eb]";
 
   if (!open) return null;
 
@@ -92,10 +110,10 @@ export default function ContactFormModal({ open, onClose, services = [], onSubmi
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-3 sm:px-4">
       <div className="absolute inset-0 bg-black/60" onClick={onClose} />
-      <div className="relative w-full max-w-3xl rounded-2xl border border-white/10 bg-[#0B1B2B] text-white p-5 sm:p-8 shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
+      <div className={panelClass}>
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-2xl sm:text-3xl font-extrabold">Tell us about your Projects</h3>
-          <button aria-label="Close" onClick={onClose} className="text-white/80 hover:text-white text-xl">×</button>
+          <button aria-label="Close" onClick={onClose} className={closeButtonClass}>×</button>
         </div>
 
         <form onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-5">
@@ -109,11 +127,13 @@ export default function ContactFormModal({ open, onClose, services = [], onSubmi
                   setFullName(e.target.value);
                   if (fullNameError) setFullNameError("");
                 }}
-                className={`w-full rounded-xl bg-transparent border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#12d576] ${
-                  fullNameError ? "border-red-400" : "border-white/20"
+                className={`${baseInputClass} ${fieldToneClass} ${
+                  fullNameError
+                    ? "border-red-400 focus:ring-red-400"
+                    : `${normalBorderClass} ${normalFocusClass}`
                 }`}
               />
-              {fullNameError && <span className="text-xs text-red-400">{fullNameError}</span>}
+              {fullNameError && <span className="text-xs text-red-500">{fullNameError}</span>}
             </div>
             <div className="flex flex-col gap-1">
               <input
@@ -124,11 +144,13 @@ export default function ContactFormModal({ open, onClose, services = [], onSubmi
                   setMobile(e.target.value);
                   if (mobileError) setMobileError("");
                 }}
-                className={`w-full rounded-xl bg-transparent border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#12d576] ${
-                  mobileError ? "border-red-400" : "border-white/20"
+                className={`${baseInputClass} ${fieldToneClass} ${
+                  mobileError
+                    ? "border-red-400 focus:ring-red-400"
+                    : `${normalBorderClass} ${normalFocusClass}`
                 }`}
               />
-              {mobileError && <span className="text-xs text-red-400">{mobileError}</span>}
+              {mobileError && <span className="text-xs text-red-500">{mobileError}</span>}
             </div>
           </div>
 
@@ -142,11 +164,13 @@ export default function ContactFormModal({ open, onClose, services = [], onSubmi
                   setCompanyName(e.target.value);
                   if (companyError) setCompanyError("");
                 }}
-                className={`w-full rounded-xl bg-transparent border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#12d576] ${
-                  companyError ? "border-red-400" : "border-white/20"
+                className={`${baseInputClass} ${fieldToneClass} ${
+                  companyError
+                    ? "border-red-400 focus:ring-red-400"
+                    : `${normalBorderClass} ${normalFocusClass}`
                 }`}
               />
-              {companyError && <span className="text-xs text-red-400">{companyError}</span>}
+              {companyError && <span className="text-xs text-red-500">{companyError}</span>}
             </div>
             <div className="flex flex-col gap-1">
               <input
@@ -157,11 +181,13 @@ export default function ContactFormModal({ open, onClose, services = [], onSubmi
                   setEmail(e.target.value);
                   if (emailError) setEmailError("");
                 }}
-                className={`w-full rounded-xl bg-transparent border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#12d576] ${
-                  emailError ? "border-red-400" : "border-white/20"
+                className={`${baseInputClass} ${fieldToneClass} ${
+                  emailError
+                    ? "border-red-400 focus:ring-red-400"
+                    : `${normalBorderClass} ${normalFocusClass}`
                 }`}
               />
-              {emailError && <span className="text-xs text-red-400">{emailError}</span>}
+              {emailError && <span className="text-xs text-red-500">{emailError}</span>}
             </div>
           </div>
 
@@ -174,21 +200,23 @@ export default function ContactFormModal({ open, onClose, services = [], onSubmi
                 setMessage(e.target.value);
                 if (messageError) setMessageError("");
               }}
-              className={`w-full rounded-xl bg-transparent border px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#12d576] ${
-                messageError ? "border-red-400" : "border-white/20"
+              className={`${baseTextareaClass} ${fieldToneClass} ${
+                messageError
+                  ? "border-red-400 focus:ring-red-400"
+                  : `${normalBorderClass} ${normalFocusClass}`
               }`}
             />
-            {messageError && <span className="text-xs text-red-400">{messageError}</span>}
+            {messageError && <span className="text-xs text-red-500">{messageError}</span>}
           </div>
 
-          <div className="space-y-3 text-xs sm:text-sm">
+          <div className={`space-y-3 text-xs sm:text-sm ${checkboxTextClass}`}>
             <label className="flex items-center gap-2">
               <input type="checkbox" className="accent-[#12d576]" checked={agreePrivacy} onChange={(e) => setAgreePrivacy(e.target.checked)} />
               <span>
-                I agree with the <a href="https://securedapp.gitbook.io/securedapp-launchpad/privacy-policy-securedapp" className="underline" target="_blank" rel="noreferrer">Privacy Policy</a> and information being used to contact me
+                I agree with the <a href="https://securedapp.gitbook.io/securedapp-launchpad/privacy-policy-securedapp" className={privacyLinkClass} target="_blank" rel="noreferrer">Privacy Policy</a> and information being used to contact me
               </span>
             </label>
-            {privacyError && <div className="text-xs text-red-400">{privacyError}</div>}
+            {privacyError && <div className="text-xs text-red-500">{privacyError}</div>}
             <label className="flex items-center gap-2">
               <input type="checkbox" className="accent-[#12d576]" checked={subscribeReports} onChange={(e) => setSubscribeReports(e.target.checked)} />
               <span>Get cyber-security research reports.</span>

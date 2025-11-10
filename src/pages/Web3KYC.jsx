@@ -191,6 +191,7 @@ function Web3KYC({ darkMode, toggleTheme }) {
         open={contactOpen}
         onClose={closeContact}
         services={services}
+        darkMode={darkMode}
         onSubmit={() => {
           closeContact();
         }}

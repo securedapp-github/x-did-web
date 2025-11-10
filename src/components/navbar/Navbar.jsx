@@ -18,7 +18,11 @@ export default function Navbar({ darkMode, toggleTheme }) {
         darkMode={darkMode} 
         toggleTheme={toggleTheme} 
       />
-      <RequestQuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <RequestQuoteModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        darkMode={darkMode}
+      />
     </>
   );
 }
